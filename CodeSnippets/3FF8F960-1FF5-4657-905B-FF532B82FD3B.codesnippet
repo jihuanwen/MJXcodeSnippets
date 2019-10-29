@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>mjJudgeDevice</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>BOOL isLowerIphone6()
+{
+  struct utsname systemInfo;
+  uname(&amp;systemInfo);
+  NSString *platform = [NSString stringWithCString:systemInfo.machine encoding:NSASCIIStringEncoding];
+  if ([platform containsString:@"iPhone"])
+  {
+    NSArray *deviceInfo = [platform componentsSeparatedByString:@","];
+    if (deviceInfo.count &gt; 0)
+    {
+      NSString *device = deviceInfo[0];
+      NSString *deviceNum = [device substringFromIndex:@"iPhone".length];
+        if (deviceNum.intValue &lt;= &lt;#code#&gt;)
+      {
+        /// iPhone6以下 设置code = 7
+        return YES;
+      }
+    }
+  }
+  return NO;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>3FF8F960-1FF5-4657-905B-FF532B82FD3B</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>需要导入#import &lt;sys/utsname.h&gt;</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>机型判断</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
